@@ -1,0 +1,70 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #add8e6; 
+  }
+  
+  header {
+    background-color: #5c2b94; 
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+ 
+  .restaurant-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+  
+  .image {
+    background-color: #9acd32; 
+    color: black;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1;
+  }
+  
+  .info {
+    flex: 2;
+    padding: 0 10px;
+  }
+  
+  .food-name,
+  .restaurant-name,
+  .price {
+    margin: 5px 0;
+  }
+  
+  .order-button {
+    background-color: yellow;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    flex: 0.5;
+  }
+  
+  .order-button:hover {
+    background-color: #ffd700; 
+  }
+  
