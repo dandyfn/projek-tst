@@ -1,0 +1,44 @@
+document.getElementById('applyPromo').addEventListener('click', async () => {
+    const url = 'http://localhost/middleware/promo';
+    const requestData = {
+        user_id: 123,
+        restaurant_id: 456
+    };
+
+    try {
+        // Kirim permintaan ke middleware
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(requestData)
+        });
+
+        // Terima dan proses respons
+        const result = await response.json();
+        processResult(result);
+    } catch (error) {
+        console.error('Error:', error);
+        document.getElementById('promoResult').innerText = 'Terjadi kesalahan saat memproses promo!';
+    }
+});
+
+function processResult(result) {
+    const resultDiv = document.getElementById('promoResult');
+
+    if (result.status === 'success') {
+        if (result.promo_applied) {
+            resultDiv.innerHTML = `
+                <p style="color: green; font-weight: bold;">${result.message}</p>
+                <p>Diskon sebesar Rp${result.discount_amount} berhasil diterapkan!</p>
+            `;
+        } else {
+            resultDiv.innerHTML = `
+                <p style="color: orange;">${result.message}</p>
+            `;
+        }
+    } else {
+        resultDiv.innerHTML = `
+            <p style="color: red;">Terjadi kesalahan pada server: ${result.message}</p>
+        `;
+    }
+}
