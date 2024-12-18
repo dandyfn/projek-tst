@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan Makanan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: center;
+        }
+        .promo {
+            color: green;
+            font-weight: bold;
+        }
+        button {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Daftar Makanan</h1>
+        <div class="food">
+            <p>Nama Restoran: Resto Brawijaya</p>
+            <p>Nama Makanan: Ayam Goreng</p>
+            <p>Harga: Rp 25,000</p>
+            <button id="orderButton">Pesan Makanan</button>
+        </div>
+        <div class="promo" id="promoDisplay"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
